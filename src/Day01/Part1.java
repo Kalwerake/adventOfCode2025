@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Part1{
     private int password;
     ArrayList<Turn> turns;
+
     public Part1(){
     }
 
@@ -14,7 +15,7 @@ public class Part1{
         this.turns = file.getTurn(filename);
     }
 
-    public int turnDial(int start, int dist, String dir){
+    public static int turnDial(int start, int dist, String dir){
         final int min = 0;
         final int max = 100;
 
@@ -32,7 +33,6 @@ public class Part1{
     public int getPassword(){
         int begin = 50;
         int password = 0;
-        ArrayList<Integer> results = new ArrayList<Integer>();
 
         for(Turn turn: turns){
             String dir = turn.getDir();
@@ -47,18 +47,8 @@ public class Part1{
     }
 
 
-
-
 public static void main(String[] args) {
-    InputLoader file = new InputLoader();
     Part1 Safe = new Part1();
-
-    System.out.println((50 + 250)%100);
-    System.out.println((100 + ((68 - 169)%100)));
-
-
-    System.out.println(Safe.turnDial(50 , 807, Character.toString('R')));
-
     Safe.loadTurns(".data/day1_input.txt");
 
     int password = Safe.getPassword();

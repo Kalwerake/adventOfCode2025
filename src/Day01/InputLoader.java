@@ -12,9 +12,7 @@ public class InputLoader {
     private final int DIR = 0,
                       DIST =1;
 
-    public InputLoader(){
-
-    }
+    public InputLoader(){}
 
     public ArrayList<Turn> getTurn(String filename)
     {
